@@ -5,7 +5,7 @@ public class PewPewController : MonoBehaviour {
     public FlightControls controls;
 
     void Update() {
-        if (Input.GetKey(controls.pewpew)) {
+        if (Input.GetButton(controls.pewpew)) {
             Shoot();
         }
     }
