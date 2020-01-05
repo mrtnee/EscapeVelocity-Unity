@@ -17,7 +17,7 @@ public class PewPewController : MonoBehaviour {
             Target target = hit.transform.GetComponent<Target>();
             if (target != null) {
                 // The element has a Target script, therefore it is a aircraft
-                target.Die();
+                StartCoroutine(target.Die());
             }
         }
     }

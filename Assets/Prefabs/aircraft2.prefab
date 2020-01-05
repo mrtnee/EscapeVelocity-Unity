@@ -4918,7 +4918,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5bc90dc0fb1b34896fe1a73a044510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aircraft: {fileID: 5908640064500882926}
   explosion: {fileID: 1706237492709624163}
+  waitAfterDeath: 2
 --- !u!136 &6157535613099722207
 CapsuleCollider:
   m_ObjectHideFlags: 0
