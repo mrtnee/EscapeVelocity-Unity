@@ -12,6 +12,8 @@ public class FlightController : MonoBehaviour
     public float xRotSpeed = 100f;
     public float zRotSpeed = 100f;
 
+    public bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class FlightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead) return;
+
         if (Input.GetAxis(controls.moreSpeed) > 0) {
             speed += acceleration * Time.deltaTime;
         }
