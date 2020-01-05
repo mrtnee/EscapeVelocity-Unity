@@ -36,8 +36,8 @@ public class FlightController : MonoBehaviour
 
         float xRotation = Input.GetAxis(controls.verticalAxis) * Time.deltaTime * xRotSpeed;
         float zRotation = Input.GetAxis(controls.horizontalAxis) * Time.deltaTime * zRotSpeed;
-        transform.Rotate(xRotation, 0.0f, -zRotation);
         transform.position += transform.forward * Time.deltaTime * speed;
+        transform.Rotate(xRotation, 0.0f, -zRotation);
 
         // Get terrain height at current aircraft position
         float terrainHeight = Terrain.activeTerrain.SampleHeight(transform.position);
