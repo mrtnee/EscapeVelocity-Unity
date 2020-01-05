@@ -7,4 +7,5 @@ public class FlightControls : ScriptableObject
     public string horizontalAxis;
     public string verticalAxis;
     public string pewpew;
+    public string moreSpeed;
 }
