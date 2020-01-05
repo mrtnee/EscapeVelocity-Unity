@@ -10,6 +10,14 @@ public class Target : MonoBehaviour
     public float waitAfterDeath = 1.0f;
     private bool isCurrentlyDying = false;
 
+    private Vector3 spawnPosition;
+    private Quaternion spawnRotation;
+
+    private void Awake() {
+        spawnPosition = aircraft.transform.position;
+        spawnRotation = aircraft.transform.rotation;
+    }
+
     public IEnumerator Die() {
         // This target was already hit, don't play the explosion
         if (isCurrentlyDying)
@@ -23,20 +31,16 @@ public class Target : MonoBehaviour
         // After explosion has finished, move the player to a new random position
         yield return new WaitForSeconds(waitAfterDeath);
 
-        SetRandomPositionAboveWorld();
+        MoveToSpawnPoint();
 
         isCurrentlyDying = false;
     }
 
-    private void SetRandomPositionAboveWorld() {
-        // Calculate random position and move the aircraft to specified position
-        TerrainData terrainData = Terrain.activeTerrain.terrainData;
-        Vector3 terrainPosition = Terrain.activeTerrain.GetPosition();
+    private void MoveToSpawnPoint() {
+        aircraft.transform.position = spawnPosition;
+        aircraft.transform.rotation = spawnRotation;
 
-        float randomX = Random.Range(terrainPosition.x, terrainPosition.x + terrainData.size.x);
-        float randomZ = Random.Range(terrainPosition.z, terrainPosition.z + terrainData.size.z);
-        float positionY = Terrain.activeTerrain.SampleHeight(new Vector3(randomX, randomZ, 0));
-        aircraft.transform.position = new Vector3(randomX, positionY + 5, randomZ);
+
     }
 
 }
