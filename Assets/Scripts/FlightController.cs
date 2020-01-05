@@ -38,5 +38,16 @@ public class FlightController : MonoBehaviour
         float zRotation = Input.GetAxis(controls.horizontalAxis) * Time.deltaTime * zRotSpeed;
         transform.position += transform.forward * Time.deltaTime * speed;
         transform.Rotate(xRotation, 0.0f, -zRotation);
+
+        // Get terrain height at current aircraft position
+        float terrainHeight = Terrain.activeTerrain.SampleHeight(transform.position);
+
+        // If the aircraft is below the world, destroy it
+        if (terrainHeight > transform.position.y) {
+            
+            Target target = gameObject.GetComponentInChildren<Target>();
+            if (target != null)
+                StartCoroutine(target.Die());
+        }
     }
 }

@@ -23,7 +23,10 @@ public class Target : MonoBehaviour
         if (isCurrentlyDying)
             yield break;
 
+        FlightController controller = aircraft.GetComponent<FlightController>();
+
         isCurrentlyDying = true;
+        controller.isDead = true;
 
         // Play the explosion particle system
         explosion.Play();
@@ -34,6 +37,7 @@ public class Target : MonoBehaviour
         MoveToSpawnPoint();
 
         isCurrentlyDying = false;
+        controller.isDead = false;
     }
 
     private void MoveToSpawnPoint() {
