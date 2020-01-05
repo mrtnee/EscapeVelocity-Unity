@@ -11,12 +11,13 @@ public class PewPewController : MonoBehaviour {
     }
 
     void Shoot() {
-        Debug.Log("SHOOT");
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 100000)) {
-            // We have hit something, check if the object that was shot is in group aircraft
-            if (hit.transform.tag.Equals("aircraft")) {
-                Debug.Log(hit.transform.name);
+            // Check if the element that we have shot has a script target
+            Target target = hit.transform.GetComponent<Target>();
+            if (target != null) {
+                // The element has a Target script, therefore it is a aircraft
+                target.Die();
             }
         }
     }
