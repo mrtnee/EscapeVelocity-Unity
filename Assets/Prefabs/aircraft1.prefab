@@ -45,11 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fdd946ad4beee4c9d47beea61a4d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controls: {fileID: 11400000, guid: 3f9293ad43bde644da2eab2f4b222606, type: 2}
+  minimumSpeed: 35
+  maximumSpeed: 120
   speed: 90
-  vertical: Vertical1
-  horizontal: Horizontal1
-  shoot: 
-  acceleration: 
 --- !u!114 &7732515551084151511
 MonoBehaviour:
   m_ObjectHideFlags: 0
