@@ -51,6 +51,8 @@ MonoBehaviour:
   speed: 90
   acceleration: 10
   deceleration: 10
+  xRotSpeed: 100
+  zRotSpeed: 100
 --- !u!114 &7732515551084151511
 MonoBehaviour:
   m_ObjectHideFlags: 0
