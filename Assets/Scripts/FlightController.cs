@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class FlightController : MonoBehaviour
 {
+    public FlightControls controls;
 
     public float minimumSpeed = 35.0f;
     public float maximumSpeed = 120.0f;
     public float speed = 90.0f;
-
-    public string vertical;
-    public string horizontal;
-    public string shoot;
-    public string acceleration;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +24,7 @@ public class FlightController : MonoBehaviour
 
         speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
         
-        transform.Rotate(Input.GetAxis(vertical), 0.0f, -Input.GetAxis(horizontal));
+        transform.Rotate(Input.GetAxis(controls.verticalAxis), 0.0f, -Input.GetAxis(controls.horizontalAxis));
 
 
         float terrainHeightWherePlaneIs = Terrain.activeTerrain.SampleHeight(transform.position);
