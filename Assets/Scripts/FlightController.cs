@@ -9,6 +9,8 @@ public class FlightController : MonoBehaviour
     public float speed = 90.0f;
     public float acceleration = 10f;
     public float deceleration = 10f;
+    public float xRotSpeed = 100f;
+    public float zRotSpeed = 100f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,9 @@ public class FlightController : MonoBehaviour
 
         speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
 
-
-        transform.Rotate(Input.GetAxis(controls.verticalAxis), 0.0f, -Input.GetAxis(controls.horizontalAxis));
+        float xRotation = Input.GetAxis(controls.verticalAxis) * Time.deltaTime * xRotSpeed;
+        float zRotation = Input.GetAxis(controls.horizontalAxis) * Time.deltaTime * zRotSpeed;
+        transform.Rotate(xRotation, 0.0f, -zRotation);
         transform.position += transform.forward * Time.deltaTime * speed;
     }
 }
