@@ -5,6 +5,8 @@ using UnityEngine;
 public class FlightController : MonoBehaviour
 {
 
+    public float minimumSpeed = 35.0f;
+    public float maximumSpeed = 120.0f;
     public float speed = 90.0f;
 
     public string vertical;
@@ -24,17 +26,7 @@ public class FlightController : MonoBehaviour
         transform.position += transform.forward * Time.deltaTime * speed;
         speed -= transform.forward.y * Time.deltaTime * 50.0f;
 
-        if (speed < 35.0f)
-        {
-            speed = 35.0f;
-        }
-
-        if (speed > 120.0f)
-        {
-            speed = 120.0f;
-        }
-
-
+        speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
         
         transform.Rotate(Input.GetAxis(vertical), 0.0f, -Input.GetAxis(horizontal));
 
