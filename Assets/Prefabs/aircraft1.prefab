@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7739854513387780817}
   - component: {fileID: 5061969433330068878}
   - component: {fileID: 7732515551084151511}
-  - component: {fileID: 5195305394606878221}
   m_Layer: 0
   m_Name: aircraft1
   m_TagString: aircraft
@@ -47,9 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 11400000, guid: 3f9293ad43bde644da2eab2f4b222606, type: 2}
-  minimumSpeed: 35
+  minimumSpeed: 0
   maximumSpeed: 120
   speed: 90
+  acceleration: 10
+  deceleration: 10
 --- !u!114 &7732515551084151511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,18 +64,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 11400000, guid: 3f9293ad43bde644da2eab2f4b222606, type: 2}
---- !u!114 &5195305394606878221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7739854513387780830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c5bc90dc0fb1b34896fe1a73a044510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7739854514055390843
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +76,7 @@ GameObject:
   - component: {fileID: 7739854514055390844}
   - component: {fileID: 7739854514055390845}
   - component: {fileID: 7739854514055390847}
+  - component: {fileID: 8926380514998491724}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -168,3 +158,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4493585093827132993, guid: b7e0f51577ed0014c9530705543c3260, type: 3}
+--- !u!114 &8926380514998491724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739854514055390843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5bc90dc0fb1b34896fe1a73a044510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
