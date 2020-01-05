@@ -12,6 +12,9 @@ public class Target : MonoBehaviour
 
         // Play the explosion particle system
         explosion.Play();
+
+        // After explosion has finished, move the player to a new random position
+        
     }
 
 }

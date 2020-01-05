@@ -4824,6 +4824,7 @@ GameObject:
   - component: {fileID: 5908640063246832349}
   - component: {fileID: 5908640063246832350}
   - component: {fileID: 4021142285296813400}
+  - component: {fileID: 6157535613099722207}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -4918,6 +4919,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1706237492709624163}
+--- !u!136 &6157535613099722207
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5908640063246832336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.055675566
+  m_Height: 0.15310478
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.02, z: 0.008}
 --- !u!1 &5908640064500882926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,6 +4985,8 @@ MonoBehaviour:
   speed: 90
   acceleration: 10
   deceleration: 10
+  xRotSpeed: 100
+  zRotSpeed: 100
 --- !u!114 &7617580705288919565
 MonoBehaviour:
   m_ObjectHideFlags: 0

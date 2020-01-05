@@ -4891,6 +4891,7 @@ GameObject:
   - component: {fileID: 7739854514055390845}
   - component: {fileID: 7739854514055390847}
   - component: {fileID: 8926380514998491724}
+  - component: {fileID: 3307811359185695375}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -4985,3 +4986,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 7100863036541246029}
+--- !u!136 &3307811359185695375
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739854514055390843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.055675566
+  m_Height: 0.15310478
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.011456142, z: -0.00048335607}
