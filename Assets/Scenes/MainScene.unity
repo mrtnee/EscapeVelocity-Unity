@@ -264,6 +264,14 @@ MonoBehaviour:
   flightSpeed: 30
   rollSpeed: 100
   pitchSpeed: 100
+  up: 0
+  down: 0
+  right: 0
+  left: 0
+  accelerate: 0
+  shoot: 0
+  dt: 0
+  transform: {fileID: 0}
 --- !u!114 &572588482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,10 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 90
-  up_mine: 115
-  down: 119
-  left: 97
-  right: 100
+  vertical: 
+  horizontal: 
+  shoot: 
+  acceleration: 
 --- !u!1001 &597817793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,16 +377,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 90
-  up_mine: 259
-  down: 261
-  left: 263
-  right: 264
+  vertical: Vertical2
+  horizontal: Horizontal2
+  shoot: 
+  acceleration: 
 --- !u!4 &597817796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5908640064500882925, guid: 95154b90bda37b544bb40666ac2b5020,
     type: 3}
   m_PrefabInstance: {fileID: 597817793}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &670387374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7739854513387780830, guid: 32205f7998f38a94688a538266fea394,
+    type: 3}
+  m_PrefabInstance: {fileID: 2010617684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &670387375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670387374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81fdd946ad4beee4c9d47beea61a4d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 90
+  vertical: Vertical1
+  horizontal: Horizontal1
+  shoot: 
+  acceleration: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,8 +602,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708516267}
-  m_LocalRotation: {x: -0.28863475, y: 0.119087175, z: 0.036556043, w: 0.94930077}
-  m_LocalPosition: {x: 123.424576, y: -635.3266, z: -1304.0901}
+  m_LocalRotation: {x: -0.32470998, y: 0.1582715, z: 0.055619624, w: 0.9308169}
+  m_LocalPosition: {x: 41.477524, y: -636.45135, z: -808.54016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 170750381}
@@ -997,8 +1028,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544549162}
-  m_LocalRotation: {x: -0.28863475, y: 0.119087175, z: 0.036556043, w: 0.94930077}
-  m_LocalPosition: {x: 123.424576, y: -635.3266, z: -1304.0901}
+  m_LocalRotation: {x: -0.32470998, y: 0.1582715, z: 0.055619624, w: 0.9308169}
+  m_LocalPosition: {x: 41.477524, y: -636.45135, z: -808.54016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 170750381}
@@ -1106,6 +1137,14 @@ MonoBehaviour:
   flightSpeed: 30
   rollSpeed: 100
   pitchSpeed: 100
+  up: 0
+  down: 0
+  right: 0
+  left: 0
+  accelerate: 0
+  shoot: 0
+  dt: 0
+  transform: {fileID: 0}
 --- !u!33 &1772908686
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1179,10 +1218,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 90
-  up_mine: 107
-  down: 105
-  left: 106
-  right: 108
+  vertical: 
+  horizontal: 
+  shoot: 
+  acceleration: 
 --- !u!1001 &2010617684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1250,7 +1289,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: aircraft1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7739854513387780816, guid: 32205f7998f38a94688a538266fea394, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32205f7998f38a94688a538266fea394, type: 3}
 --- !u!4 &2010617685 stripped
 Transform:

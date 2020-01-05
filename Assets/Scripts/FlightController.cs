@@ -4,41 +4,41 @@ using UnityEngine;
 
 public class FlightController : MonoBehaviour
 {
-    [SerializeField]
-    float flightSpeed = 30;
-    [SerializeField]
-    float rollSpeed = 30;
-    [SerializeField]
-    float pitchSpeed = 30;
 
-    bool up;
-    bool down;
-    bool right;
-    bool left;
-    bool accelerate;
-    bool shoot;
+    public float speed = 90.0f;
 
-    float dt;
-
-    Transform transform;
+    public string vertical;
+    public string horizontal;
+    public string shoot;
+    public string acceleration;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform = gameObject.transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        dt = Time.deltaTime;
+        transform.position += transform.forward * Time.deltaTime * speed;
+        speed -= transform.forward.y * Time.deltaTime * 50.0f;
 
+        if (speed < 35.0f)
+        {
+            speed = 35.0f;
+        }
 
+        if (speed > 120.0f)
+        {
+            speed = 120.0f;
+        }
 
-        transform.Rotate(Input.GetAxis("Vertical") * dt * pitchSpeed, 0.0f, -Input.GetAxis("Horizontal") * dt * rollSpeed);
-        transform.position += transform.forward * dt * flightSpeed;
 
         
+        transform.Rotate(Input.GetAxis(vertical), 0.0f, -Input.GetAxis(horizontal));
+
+
         float terrainHeightWherePlaneIs = Terrain.activeTerrain.SampleHeight(transform.position);
 
         if (terrainHeightWherePlaneIs > transform.position.y)
@@ -46,14 +46,7 @@ public class FlightController : MonoBehaviour
             transform.position = new Vector3(transform.position.x,
                 terrainHeightWherePlaneIs,
                 transform.position.z);
+            speed = 35.0f;
         }
-        
-
-    }
-
-    // Update is called once per pyhisics update
-    private void FixedUpdate()
-    {
-        
     }
 }
