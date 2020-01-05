@@ -7,7 +7,7 @@ public class Target : MonoBehaviour
     public GameObject aircraft;
     public ParticleSystem explosion;
 
-    public float waitAfterDeath = 1.0f;
+    public float waitAfterDeath = 0.5f;
     private bool isCurrentlyDying = false;
 
     private Vector3 spawnPosition;
@@ -29,7 +29,7 @@ public class Target : MonoBehaviour
         explosion.Play();
 
         // After explosion has finished, move the player to a new random position
-        yield return new WaitForSeconds(waitAfterDeath);
+        yield return new WaitForSecondsRealtime(waitAfterDeath);
 
         MoveToSpawnPoint();
 
@@ -39,8 +39,6 @@ public class Target : MonoBehaviour
     private void MoveToSpawnPoint() {
         aircraft.transform.position = spawnPosition;
         aircraft.transform.rotation = spawnRotation;
-
-
     }
 
 }

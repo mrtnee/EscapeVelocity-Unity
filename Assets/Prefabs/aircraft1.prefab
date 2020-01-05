@@ -4865,6 +4865,7 @@ MonoBehaviour:
   deceleration: 10
   xRotSpeed: 100
   zRotSpeed: 100
+  isDead: 0
 --- !u!114 &7732515551084151511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4987,7 +4988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aircraft: {fileID: 7739854513387780830}
   explosion: {fileID: 7100863036541246029}
-  waitAfterDeath: 2
+  waitAfterDeath: 1
 --- !u!136 &3307811359185695375
 CapsuleCollider:
   m_ObjectHideFlags: 0
