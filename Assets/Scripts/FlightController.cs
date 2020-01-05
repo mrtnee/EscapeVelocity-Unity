@@ -37,6 +37,18 @@ public class FlightController : MonoBehaviour
 
         transform.Rotate(Input.GetAxis("Vertical") * dt * pitchSpeed, 0.0f, -Input.GetAxis("Horizontal") * dt * rollSpeed);
         transform.position += transform.forward * dt * flightSpeed;
+
+        
+        float terrainHeightWherePlaneIs = Terrain.activeTerrain.SampleHeight(transform.position);
+
+        if (terrainHeightWherePlaneIs > transform.position.y)
+        {
+            transform.position = new Vector3(transform.position.x,
+                terrainHeightWherePlaneIs,
+                transform.position.z);
+        }
+        
+
     }
 
     // Update is called once per pyhisics update
