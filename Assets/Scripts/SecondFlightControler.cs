@@ -26,6 +26,11 @@ public class SecondFlightControler : MonoBehaviour
     public KeyCode down;
     public KeyCode left;
     public KeyCode right;
+
+    public string vertical;
+    public string horizontal;
+    public string shoot;
+    public string nitro;
     // public KeyCode shoot;
     // public KeyCode nitro; // for more speed
 
@@ -63,7 +68,7 @@ public class SecondFlightControler : MonoBehaviour
 
         if (Input.GetKey(up_mine) || Input.GetKey(down) || Input.GetKey(left) || Input.GetKey(right))
         {
-            transform.Rotate(Input.GetAxis("Vertical"), 0.0f, -Input.GetAxis("Horizontal"));
+            transform.Rotate(Input.GetAxis(vertical), 0.0f, -Input.GetAxis(horizontal));
         }
 
         /*
