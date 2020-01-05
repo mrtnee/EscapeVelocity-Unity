@@ -14,7 +14,6 @@ public class Target : MonoBehaviour
         explosion.Play();
 
         // After explosion has finished, move the player to a new random position
-        
     }
 
 }
