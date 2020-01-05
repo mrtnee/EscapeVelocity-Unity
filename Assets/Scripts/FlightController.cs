@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlightController : MonoBehaviour
 {
@@ -9,6 +7,8 @@ public class FlightController : MonoBehaviour
     public float minimumSpeed = 35.0f;
     public float maximumSpeed = 120.0f;
     public float speed = 90.0f;
+    public float acceleration = 10f;
+    public float deceleration = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +19,17 @@ public class FlightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * speed;
-        speed -= transform.forward.y * Time.deltaTime * 50.0f;
+        if (Input.GetAxis(controls.moreSpeed) > 0) {
+            speed += acceleration * Time.deltaTime;
+        }
+        else {
+            speed -= deceleration * Time.deltaTime;
+        }
 
         speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
-        
+
+
         transform.Rotate(Input.GetAxis(controls.verticalAxis), 0.0f, -Input.GetAxis(controls.horizontalAxis));
-
-
-        float terrainHeightWherePlaneIs = Terrain.activeTerrain.SampleHeight(transform.position);
-
-        if (terrainHeightWherePlaneIs > transform.position.y)
-        {
-            transform.position = new Vector3(transform.position.x,
-                terrainHeightWherePlaneIs,
-                transform.position.z);
-            speed = 35.0f;
-        }
+        transform.position += transform.forward * Time.deltaTime * speed;
     }
 }
