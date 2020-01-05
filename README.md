@@ -4,15 +4,15 @@ Unity implementation of the EscapeVelocity game.
 
 ## TODO:
 - [x] kontrole
-- [ ] streljanje
+- [x] streljanje
 - [ ] checkpointi
 - [ ] osvetljava
 - [ ] UI
-- [ ] eksplozije and shit
-- [ ] kamera
-- [ ] letenje
-- [ ] code clean
+- [x] eksplozije and shit
+- [x] kamera
+- [x] letenje
+- [x] code clean
 
 ## if(TIME):
 - [ ] kamikaze
-- [ ] minimap
+- [x] minimap
