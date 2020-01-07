@@ -272,6 +272,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: aircraft1
       objectReference: {fileID: 0}
+    - target: {fileID: 8926380514998491724, guid: 32205f7998f38a94688a538266fea394,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 963194227}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32205f7998f38a94688a538266fea394, type: 3}
 --- !u!4 &568891901 stripped
@@ -472,8 +477,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708516267}
-  m_LocalRotation: {x: 0.44348097, y: 0.36135852, z: 0.20156421, w: -0.7950576}
-  m_LocalPosition: {x: 371.92206, y: -1050.1342, z: -938.7222}
+  m_LocalRotation: {x: -0.39659268, y: 0.081076816, z: 0.0351903, w: 0.91372997}
+  m_LocalPosition: {x: -21.605759, y: -1465.4695, z: -1362.2261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 170750381}
@@ -807,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1208115009}
   - component: {fileID: 1208115008}
+  - component: {fileID: 1208115010}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionMinimapCamera
   m_TagString: Untagged
@@ -864,13 +870,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208115007}
-  m_LocalRotation: {x: 0.3777022, y: 0.28304946, z: 0.122459784, w: -0.87305653}
-  m_LocalPosition: {x: 761.6271, y: -512.5862, z: -360.20013}
+  m_LocalRotation: {x: -0.39659268, y: 0.081076816, z: 0.0351903, w: 0.91372997}
+  m_LocalPosition: {x: 207.9166, y: -1488.0135, z: -949.6146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &1208115010
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208115007}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &1303742221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,8 +1318,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544549162}
-  m_LocalRotation: {x: 0.44348097, y: 0.36135852, z: 0.20156421, w: -0.7950576}
-  m_LocalPosition: {x: 371.92206, y: -1050.1342, z: -938.7222}
+  m_LocalRotation: {x: -0.39659268, y: 0.081076816, z: 0.0351903, w: 0.91372997}
+  m_LocalPosition: {x: -21.605759, y: -1465.4695, z: -1362.2261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 170750381}
@@ -1845,6 +1860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753417132}
   - component: {fileID: 1753417131}
+  - component: {fileID: 1753417133}
   m_Layer: 0
   m_Name: Water4Advanced (1)ReflectionMinimapCamera
   m_TagString: Untagged
@@ -1902,13 +1918,22 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753417130}
-  m_LocalRotation: {x: 0.3777022, y: 0.28304946, z: 0.122459784, w: -0.87305653}
-  m_LocalPosition: {x: 761.6271, y: -512.5862, z: -360.20013}
+  m_LocalRotation: {x: -0.39659268, y: 0.081076816, z: 0.0351903, w: 0.91372997}
+  m_LocalPosition: {x: 207.9166, y: -1488.0135, z: -949.6146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &1753417133
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753417130}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &1793237692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,6 +1973,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4021142285296813400, guid: 95154b90bda37b544bb40666ac2b5020,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1304444333}
     - target: {fileID: 5908640064500882925, guid: 95154b90bda37b544bb40666ac2b5020,
         type: 3}
       propertyPath: m_LocalPosition.x

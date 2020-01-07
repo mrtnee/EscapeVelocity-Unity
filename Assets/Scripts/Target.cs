@@ -7,6 +7,8 @@ public class Target : MonoBehaviour
     public GameObject aircraft;
     public ParticleSystem explosion;
 
+    public Camera camera;
+
     public float waitAfterDeath = 0.5f;
     private bool isCurrentlyDying = false;
 
@@ -28,6 +30,9 @@ public class Target : MonoBehaviour
         isCurrentlyDying = true;
         controller.isDead = true;
 
+        // Hide the player model
+        gameObject.SetActive(false);
+
         // Play the explosion particle system
         explosion.Play();
 
@@ -36,13 +41,16 @@ public class Target : MonoBehaviour
 
         MoveToSpawnPoint();
 
+        // Display the player model
+        gameObject.SetActive(true);
+
         isCurrentlyDying = false;
         controller.isDead = false;
     }
 
     private void MoveToSpawnPoint() {
         aircraft.transform.position = spawnPosition;
-        aircraft.transform.rotation = spawnRotation;
+        spawnRotation = aircraft.transform.rotation;
     }
 
 }
