@@ -7,8 +7,6 @@ public class Target : MonoBehaviour
     public GameObject aircraft;
     public ParticleSystem explosion;
 
-    public Camera camera;
-
     public float waitAfterDeath = 0.5f;
     private bool isCurrentlyDying = false;
 
