@@ -4824,7 +4824,7 @@ GameObject:
   - component: {fileID: 7732515551084151511}
   m_Layer: 0
   m_Name: aircraft1
-  m_TagString: aircraft
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
