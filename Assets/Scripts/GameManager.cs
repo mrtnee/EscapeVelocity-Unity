@@ -10,12 +10,19 @@ public class GameManager : MonoBehaviour
     public double timer = 120d;
     public Canvas canvas;
     public TextMeshProUGUI timerText;
+
     public double aircraft1Score = 0; // number of checkPoints collected by aircraft1
     public double aircraft2Score = 0; // number of checkPoints collected by aircraft2
+
+    public GameObject aircraft1Scoreboard;
+    public GameObject aircraft2Scoreboard;
+    public GameObject checkpointUiPrefab;
+
     public double numberOfCheckPoints = 5; // number of all checkPoints in the game
 
     void Start() {
         StartCoroutine("Countdown");
+        UpdateScoreboards();
     }
     
     void Update() {
@@ -66,5 +73,37 @@ public class GameManager : MonoBehaviour
         }
         Debug.Log("aircraft1Score = " + aircraft1Score);
         Debug.Log("aircraft2Score = " + aircraft2Score);
+
+        UpdateScoreboards();
+    }
+
+    private void UpdateScoreboards() {
+        UpdateScoreboard(aircraft1Scoreboard, (int) aircraft1Score);
+        UpdateScoreboard(aircraft2Scoreboard, (int) aircraft2Score);
+    }
+
+    private void UpdateScoreboard(GameObject scoreboard, int score) {
+        // First, remove all children of scoreboard
+        for (int i = 0; i < scoreboard.transform.childCount; i++) {
+            GameObject.Destroy(scoreboard.transform.GetChild(i).gameObject);
+        }
+
+        // The center position of the aircraft scoreboard element
+        Vector3 position = scoreboard.transform.position;
+
+        double prefabSize = 11.3;
+        double margin = 20;
+
+        // Total height is (n * diagonal of prefab) + ((n - 1) * margin)
+        double totalHeight = score * prefabSize + (score - 1) * margin;
+        double firstPosition = -totalHeight / 2 + (prefabSize / 2);
+
+        for (int i = 0; i < score; i++) {
+            Vector3 delta = new Vector3(0, (float)(firstPosition + i * (prefabSize + margin)), 0);
+            // Create a new instance of CheckpointUI prefab
+            GameObject checkpoint = Instantiate(checkpointUiPrefab, position + delta, Quaternion.identity);
+            // Set the aircraft scoreboard as its parent
+            checkpoint.transform.parent = aircraft1Scoreboard.transform;
+        }
     }
 }
