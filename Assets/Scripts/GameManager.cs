@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
     public Canvas canvas;
     public TextMeshProUGUI timerText;
 
+    public Camera introCamera;
+    public GameObject introUiObjects;
+    public GameObject gameUiObjects;
+
     public double aircraft1Score = 0; // number of checkPoints collected by aircraft1
     public double aircraft2Score = 0; // number of checkPoints collected by aircraft2
+
+    public GameObject aircraft1, aircraft2;
 
     public GameObject aircraft1Scoreboard;
     public GameObject aircraft2Scoreboard;
@@ -20,12 +26,45 @@ public class GameManager : MonoBehaviour
 
     public double numberOfCheckPoints = 5; // number of all checkPoints in the game
 
+    private bool gameStarted = false;
+
     void Start() {
-        StartCoroutine("Countdown");
+        // Hide all game UI elements
+        gameUiObjects.SetActive(false);
+        introUiObjects.SetActive(true);
+
+        // Disable aircraft moving
+        SetAircraftsEnabled(false);
+    }
+
+    void SetAircraftsEnabled(bool isEnabled) {
+        FlightController firstAircraftScript = aircraft1.GetComponent<FlightController>();
+        FlightController secondAircraftScript = aircraft2.GetComponent<FlightController>();
+        if (firstAircraftScript != null) firstAircraftScript.isDead = !isEnabled;
+        if (secondAircraftScript != null) secondAircraftScript.isDead = !isEnabled;
+    }
+
+    void StartGame() {
+        gameStarted = true;
+
         UpdateScoreboards();
+        StartCoroutine("Countdown");
+
+        SetAircraftsEnabled(true);
+
+        // Display game UI elements and hide intro camera
+        gameUiObjects.SetActive(true);
+        introUiObjects.SetActive(false);
     }
     
     void Update() {
+        if (!gameStarted) {
+            if (Input.anyKey) {
+                StartGame();
+            }
+            return;
+        }
+
         UpdateCanvas();
 
         if (timer <= 0) {
