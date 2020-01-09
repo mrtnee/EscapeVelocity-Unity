@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Camera introCamera;
     public GameObject introUiObjects;
+    public GameObject outroUiObjects;
     public GameObject gameUiObjects;
 
     public double aircraft1Score = 0; // number of checkPoints collected by aircraft1
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         // Hide all game UI elements
         gameUiObjects.SetActive(false);
         introUiObjects.SetActive(true);
+        outroUiObjects.SetActive(false);
 
         // Disable aircraft moving
         SetAircraftsEnabled(false);
@@ -53,8 +55,24 @@ public class GameManager : MonoBehaviour
         SetAircraftsEnabled(true);
 
         // Display game UI elements and hide intro camera
+        introCamera.enabled = false;
         gameUiObjects.SetActive(true);
         introUiObjects.SetActive(false);
+        outroUiObjects.SetActive(false);
+    }
+
+    void EndGame() {
+        StopCoroutine("Countdown");
+
+        UpdateScoreboards();
+
+        SetAircraftsEnabled(false);
+
+        // Display outro UI elements and display intro camera
+        introCamera.enabled = true;
+        gameUiObjects.SetActive(false);
+        introUiObjects.SetActive(false);
+        outroUiObjects.SetActive(true);
     }
     
     void Update() {
@@ -69,7 +87,7 @@ public class GameManager : MonoBehaviour
 
         if (timer <= 0) {
             // Game Over
-            StopCoroutine("Countdown");
+            EndGame();
         }
     }
 
