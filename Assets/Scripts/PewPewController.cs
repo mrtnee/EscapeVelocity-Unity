@@ -21,6 +21,8 @@ public class PewPewController : MonoBehaviour {
 
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, 100000)) {
+            // In case we have hit something, the laser should be shorter
+            laser.SetPosition(1, hit.point);
             // Check if the element that we have shot has a script target
             Target target = hit.transform.GetComponent<Target>();
             if (target != null) {
