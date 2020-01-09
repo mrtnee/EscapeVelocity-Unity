@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
             {
                 // player 1 wins
                 Debug.Log("aircraft1 WON");
+                EndGame();
             }
         } else
         {
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
             {
                 // player 2 wins
                 Debug.Log("aircraft2 WON");
+                EndGame();
             }
         }
         Debug.Log("aircraft1Score = " + aircraft1Score);
