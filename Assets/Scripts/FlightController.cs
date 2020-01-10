@@ -50,4 +50,11 @@ public class FlightController : MonoBehaviour
                 StartCoroutine(target.Die());
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag.Equals("WorldBorder")) {
+            Debug.Log("Return to the world!");
+        }
+    }
 }
