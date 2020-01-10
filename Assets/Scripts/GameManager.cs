@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public double timer = 120d;
     public Canvas canvas;
     public TextMeshProUGUI timerText;
+    public Text winnerText;
 
     public Camera introCamera;
     public GameObject introUiObjects;
@@ -73,6 +74,15 @@ public class GameManager : MonoBehaviour
         gameUiObjects.SetActive(false);
         introUiObjects.SetActive(false);
         outroUiObjects.SetActive(true);
+
+        // Change the outro winner text to correct player
+        if (aircraft1Score > aircraft2Score) {
+            winnerText.text = "<color=#006BFF>Left aircraft</color>";
+        } else if (aircraft1Score == aircraft2Score) {
+            winnerText.text = "Nobody";
+        } else {
+            winnerText.text = "<color=orange>Right aircraft</color>";
+        }
     }
     
     void Update() {
