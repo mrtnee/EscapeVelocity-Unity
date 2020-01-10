@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     private bool gameStarted = false;
 
+    public List<ParticleSystem> spermEmiters = new List<ParticleSystem>();
+
     void Start() {
         // Hide all game UI elements
         gameUiObjects.SetActive(false);
@@ -73,6 +75,10 @@ public class GameManager : MonoBehaviour
         gameUiObjects.SetActive(false);
         introUiObjects.SetActive(false);
         outroUiObjects.SetActive(true);
+
+        foreach (ParticleSystem element in spermEmiters) {
+            element.Play();
+        }
     }
     
     void Update() {
@@ -88,6 +94,7 @@ public class GameManager : MonoBehaviour
         if (timer <= 0) {
             // Game Over
             EndGame();
+            timer = 10000;
         }
     }
 
